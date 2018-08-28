@@ -1,0 +1,709 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="./js/reveal.js"></script>
+<script src="./js/copyCSS.js"></script>
+<LINK href="./css/logo.css" rel="stylesheet" type="text/css">
+<LINK href="./css/reveal.css" rel="stylesheet" type="text/css">
+<LINK href="./css/simple.css" rel="stylesheet" type="text/css">
+<LINK href="./css/ufo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="reveal" class="reveal">
+	<div class="slides">
+		<section>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<div class="topspacer"></div>
+			<div class="topspacer"></div>
+			<div class="topspacer"></div>
+			<div class="topspacer"></div>
+			<div class="topspacer">
+				<div style="width: 80%; height: 2px; background-color: #003366;"></div>
+			</div>
+			<!--  spacer -->
+			<div class="topspacer"></div>
+			<div class="topspacer"></div>
+			<div class="topspacer"></div>
+			<div class="topspacer"></div>
+			<h1>bioWARP</h1>
+			<h2>The largest Shiny application in the world?</h2>
+			<h3>Sebastian Wolf - Roche Diagnostics - Penzberg, Germany - 14th August
+				2018</h3>
+			<div style="overflow: hidden;clear:both">
+				<img src="./images/bioWARP_on_laptop_ab1.png" class="bg"
+					style="margin-top: -12%">
+			</div>
+		</section>
+		<section>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">Structure</h1>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<ul class="structure">
+				<li class="">The Roche Diagnostics Galaxy</li>
+				<!-- 				<li class="active">Where to WARP?<br /> -->
+				<!-- 				<span>Modules in bioWARP</span></li> -->
+				<li class="">Demo<br /> <span>Method comparison
+						PDF report generation</span></li>
+				<li class="">How to build the WARP drive?<br /> <span>User
+						requirements and structure</span></li>
+				<li class="">How to test the WARP drive?<br /> <span>Some
+						remarks on validation</span></li>
+				<li class="">Summary</li>
+			</ul>
+		</section>
+		<section data-background-image="./images/smart.jpg"
+			data-background-position="top" data-transition="fade-in fade-out">
+			<div class="grad black">
+				<div class="topspacer"></div>
+				<!--  spacer -->
+				<h1 class="normal" style="color: white;">The Roche Diagnostics
+					Galaxy</h1>
+				<h2 class="normal" style="color: white;">Consists of smart
+					people</h2>
+			</div>
+		</section>
+		<section data-background-image="./images/statistics.jpg"
+			data-background-position="top" data-transition="fade-in fade-out">
+			<div class="grad white">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">The Roche Diagnostics Galaxy</h1>
+			<h2 class="normal">But what about statistics?</h2>
+			
+			</div>
+		</section>
+		<section data-background="radial-gradient(#2362a9, #19497b);"
+			data-background-position="top" data-transition="fade-in fade-out">
+			<div class="grad galaxy">
+				<div class="topspacer"></div>
+				<h1 class="normal" style="color: white;">The Roche Diagnostics
+					Galaxy</h1>
+				<div>
+					<span class="department green planet" style="top: 7.4em; position: relative; left: 2em;">Any
+						department</span><span class="planet red" style="position: relative; left: 4.3em; top: 0.5em;">CLSI
+						Guideline</span><span class="planet yellow" style="position: relative;left: 8.2em;top: 10.9em;">SOP</span><span class="blue planet" style="position: relative;left: 13.8em;top: 1.1em;">Biostats</span><span class="orange planet" style="position: relative;left: 16.4em;top: 11.8em;">Report</span>
+				</div>
+				<div>
+					<span id="rocket1" class="rocket fragment"></span>
+				</div>
+				<div>
+					<div class="line" style="left: 4em; top: 1.1em;"></div>
+					<div class="line"
+						style="left: 13em; top: 2em; transform: rotate(45deg);"></div>
+					<div class="line" style="top: 1.7em; left: 21.1em;"></div>
+					<div class="line"
+						style="left: 32em; top: 1.8em; transform: rotate(45deg);"></div>
+				</div>
+			</div>
+		</section>
+		<section data-background="radial-gradient(#2362a9, #19497b);"
+			data-background-position="top" data-transition="fade-in fade-out">
+			<div class="grad galaxy" style="height: 993px;">
+				<div class="topspacer"></div>
+				<h1 class="normal" style="color: white;">The Roche Diagnostics
+					Galaxy</h1>
+				<div style="
+    /* margin-left: 2em; */
+">
+					<span class="department green planet" style="top: 7.4em; position: relative; left: 2em;">Any
+						department</span><span class="planet red" style="position: relative;left: 4.3em;top: 2.5em;">CLSI
+						Guideline</span><span class="planet yellow" style="position: relative;left: 4.8em;top: 6.7em;">SOP</span>
+						<span class="blue planet" style="position: relative; left: 7.3em; top: 1.1em;">Biostats</span>
+						<span class="orange planet" style="position: relative;left: 13.8em;top: 8.2em;">Report</span>
+				</div>
+				<div>
+					<span class="warp fragment"></span>
+				</div>
+				<div>
+					<span id="rocket2" class="rocket fragment"></span>
+				</div>
+			</div>
+		</section>
+
+		<section data-background-image="./images/bioWARP_on_laptop_ab1.png"
+			data-background-position="5em 0em"
+			data-background-blend-mode="lighten"
+			data-transition="fade-in fade-out"
+			>
+			<div class="grad white left">
+				<div class="topspacer"></div>
+				<!--  spacer -->
+				<h1 class="normal">Structure</h1>
+				<div class="topspacer"></div>
+				<!--  spacer -->
+				<ul class="structure">
+					<li class="">The Roche Diagnostics Galaxy</li>
+					<!-- 				<li class="">Where to WARP?<br /> -->
+					<!-- 				<span>Modules in bioWARP</span></li> -->
+					<li class="active">Demo<br /> <span>Method comparison
+							PDF report generation</span></li>
+					<li class="">How to build the WARP drive?<br /> <span>User
+							requirements and structure</span></li>
+					<li class="">How to test the WARP drive?<br /> <span>Some
+							remarks on validation</span></li>
+					<li class="">Summary</li>
+				</ul>
+			</div>
+		</section>
+		<section
+			data-background-image="./images/196783.jpg"
+			data-background-position="0em -5.9em"
+			data-background-blend-mode="lighten"
+			data-transition="fade-in fade-out"
+			>
+			<div class="grad white left">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">Structure</h1>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<ul class="structure">
+				<li class="">The Roche Diagnostics Galaxy</li>
+				<!-- 				<li class="">Where to WARP?<br /> -->
+				<!-- 				<span>Modules in bioWARP</span></li> -->
+
+				<li class="">Demo<br /> <span>Method comparison PDF
+						report generation</span></li>
+				<li class="active">How to build the WARP drive?<br /> <span>User
+						requirements and structure</span></li>
+				<li class="">How to test the WARP drive?<br /> <span>Some
+						remarks on validation</span></li>
+				<li class="">Summary</li>
+			</ul></div>
+		</section>
+		<section>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">How to build the WARP drive?</h1>
+			<h2 class="normal">User requirements</h2>
+			<br />
+			<br />
+			<br />
+			<div class="requirement module">
+				<img src="./images/rocheicons/Writing_Blue_RGB.png">
+				<h4>In- &#38; Output</h4>
+				<ul>
+					<li>Universal look&#38;feel</li>
+					<li>Intuitive use</li>
+					<li><b>Standardized</b> elements</li>
+					<li>Interactive elements</li>
+				</ul>
+			</div>
+			<div class="requirement module">
+				<img src="./images/rocheicons/Cloud1_Blue_RGB.png">
+				<h4>Architecture</h4>
+				<ul>
+					<li>Roche wide availibility</li>
+					<li><b>100%</b> validated</li>
+					<li>Modularity</li>
+					<li>Rapid roll-outs of new procedures</li>
+				</ul>
+			</div>
+			<div class="requirement module second">
+				<img src="./images/rocheicons/Chip_Blue_RGB.png">
+				<h4>Environment</h4>
+				<ul>
+					<li>Special solution inside "Diagnostics Galaxy"</li>
+					<li>Based on <b>open Source</b>
+						<ul>
+							<li>Linux</li>
+							<li>R</li>
+							<li>Shiny</li>
+						</ul>
+					</li>
+
+				</ul>
+			</div>
+			<div class="requirement module second">
+				<img src="./images/rocheicons/Data_Blue_RGB.png">
+				<h4>Numerics &#38; algorithms</h4>
+				<ul>
+					<li>Using internally available R-packages</li>
+					<li><b>Harmonized</b> with Biostats department</li>
+				</ul>
+			</div>
+		</section>
+		<section data-transition="slide-in fade-out">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">How to build the WARP drive?</h1>
+			<h2 class="normal">bioWARP Toolbox</h2>
+			<br /> <br /><br/>
+			<div class="box left">
+				<img src="./images/box1.png"
+					style="width: 83.9%; margin-top: 1.5em; margin-left: -0.1em;">
+			</div>
+		</section>
+		<section data-transition="fade-in fade-out">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">How to build the WARP drive?</h1>
+			<h2 class="normal">bioWARP Toolbox - Input Tools</h2>
+			<br /> <br /><br/>
+			<div class="box left">
+				<img src="./images/box2.png">
+			</div>
+			<div class="box right module">
+
+				<div>
+					<div>
+						<img class="intro" src="./images/rocheicons/Writing_Blue_RGB.png"
+							style="filter: hue-rotate(178.2deg) brightness(1.8);"> Text
+						Input <br> <img src="./images/textinput.png">
+					</div>
+					<div>
+						<img class="intro" src="./images/rocheicons/Writing_Blue_RGB.png"
+							style="filter: hue-rotate(178.2deg) brightness(1.8);">
+						Color Picker Input<br> <img src="./images/colorinput.png">
+					</div>
+				</div>
+				<div>
+					<img class="intro" src="./images/rocheicons/Cloud1_Blue_RGB.png"
+						style="filter: hue-rotate(178.2deg) brightness(1.8);"> Data
+					Upload Input<br> <img src="./images/uploadinput.png">
+				</div>
+
+			</div>
+		</section>
+		<section data-transition="fade-in fade-out">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">How to build the WARP drive?</h1>
+			<h2 class="normal">bioWARP Toolbox - Online Analysis Tools</h2>
+			<br /> <br /><br/>
+			<div class="box left">
+				<img src="./images/box2.png">
+			</div>
+			<div class="box right module">
+				<div>
+					<div>
+						<img class="intro"
+							src="./images/rocheicons/Document2_Blue_RGB.png"
+							style="filter: hue-rotate(151deg) brightness(0.9);"> Table
+						result<br> <img src="./images/tableresult.png">
+					</div>
+					<div>
+						<img class="intro"
+							src="./images/rocheicons/Conversation2_Blue_RGB.png"
+							style="filter: hue-rotate(151deg) brightness(0.9);">
+						Markdown result<br> <img src="./images/markdownresult.png">
+
+					</div>
+
+				</div>
+				<div>
+					<img class="intro"
+						src="./images/rocheicons/Presentation_Blue_RGB.png"
+						style="filter: hue-rotate(151deg) brightness(0.9);"> Plot
+					result<br> <img src="./images/plotresult.png">
+				</div>
+			</div>
+		</section>
+		<section data-transition="fade-in slide-out">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">How to build the WARP drive?</h1>
+			<h2 class="normal">bioWARP Toolbox - Reporting Tools</h2>
+			<br /> <br /><br/>
+			<div class="box left">
+				<img src="./images/box2.png">
+			</div>
+			<div class="box right module">
+				<div style="width: 100%; max-width: 100%;">
+					<img class="intro"
+						src="./images/rocheicons/Confidential_Blue_RGB.png"
+						style="filter: hue-rotate(-90deg) brightness(1.1);"> PDF (knitr)
+				</div>
+				<div style="width: 100%; max-width: 100%;">
+					<img class="intro"
+						src="./images/rocheicons/Document2_Blue_RGB.png"
+						style="filter: hue-rotate(-90deg) brightness(1.1);"> Excel (xlsx)
+
+				</div>
+				<div style="width: 100%; max-width: 100%;">
+					<img class="intro"
+						src="./images/rocheicons/Presentation_Blue_RGB.png"
+						style="filter: hue-rotate(-90deg) brightness(1.1);"> High
+					Resolution Images (ImageMagick)
+				</div>
+			</div>
+		</section>
+		<section data-transition="slide-in slide-out">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">How to build the WARP drive?</h1>
+			<h2 class="normal">Modularization by R-packages + XML</h2>
+			<br />
+			<br />
+			<div class="package client" style="margin-left: 3em !important;">
+				<h4>RocheNet</h4>
+				<img src="./images/rocheicons/People_Blue_RGB.png">
+			</div>
+			<div class="package server fragment">
+				<h4>bioWARP</h4>
+				<div class="server one fragment" style="font-size:0.3em">
+					<h4>bioWARP.core</h4>
+					<img src="./images/box2.png" style="width:27.7%">
+					<div>Input Tools</div>
+					<div>Online Analysis Tools</div>
+					<div>Reporting Tools</div>
+					<img src="./images/rocheicons/Chip_Blue_RGB.png" style="clear:both">
+					<div class="small">Server Communication</div>
+					<div class="small">Data management</div>
+					<div>R-S4-Classes</div>
+				</div>
+				<div class="server two fragment" style="font-size:0.3em">
+					<h4>bioWARP.packages</h4>
+					<div>
+						<span class="XML">XML</span> <span class="name">bioWARP.VCA</span>
+					</div>
+					<div>
+						<span class="XML">XML</span> <span class="name">bioWARP.mc</span>
+					</div>
+					<div>
+						<span class="XML">XML</span> <span class="name">bioWARP....</span>
+					</div>
+				</div>
+			</div>
+			<div class="package numeric">
+				<h4>numerics</h4>
+				<div>VCA</div>
+				<div>mcr</div>
+				<div>...</div>
+			</div>
+		</section>
+		<section data-background-image="./images/3093051.jpg"
+			data-background-position="0em -5.9em"
+			data-background-blend-mode="lighten"
+			data-transition="fade-in fade-out"
+			>
+			<div class="grad white left">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">Structure</h1>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<ul class="structure">
+				<li class="">The Roche Diagnostics Galaxy</li>
+				<!-- 				<li class="">Where to WARP?<br /> -->
+				<!-- 				<span>Modules in bioWARP</span></li> -->
+
+				<li class="">Demo<br /> <span>Method comparison PDF
+						report generation</span></li>
+				<li class="">How to build the WARP drive?<br /> <span>User
+						requirements and structure</span></li>
+				<li class="active">How to test the WARP drive?<br /> <span>Some
+						remarks on validation</span></li>
+				<li class="">Summary</li>
+			</ul></div>
+		</section>
+		<section>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">How to test the WARP drive?</h1>
+			<h2 class="normal">XML based test cases</h2>
+			<br /> <br />
+			<div class="test package">
+				<div class="col downarrow">
+					<div>SAS</div>
+					<div>Literature</div>
+				</div>
+				<div class="col downarrow">
+					<div>R-package</div>
+				</div>
+				<div class="col leftarrow downarrow ex fragment"
+					data-fragment-index="1">
+					<div class="testing">RTest adapter</div>
+				</div>
+			</div>
+			<div class="test package">
+				<div class="col TC">
+					<div class="labelTC">XML</div>
+					<div>Reference results</div>
+	
+					<div>Function calls</div>
+				</div>
+	
+				<div class="col leftarrow fragment" data-fragment-index="1">
+					<div class="testing">RTest</div>
+				</div>
+				<div class="col leftarrowsmall fragment" data-fragment-index="2">
+					<div class="testing">Report</div>
+				</div>
+			</div>
+			<div class="test package fragment" data-fragment-index="3">
+				<div class="col TC">
+					<div class="labelTC">XML</div>
+					<div>Reference Results</div>
+
+					<div style="padding-top: 1.1em; padding-bottom: 1.6em;">
+						UI Calls<br />(Click / Type)
+					</div>
+				</div>
+
+				<div class="col leftarrow">
+					<div class="testing">RSeleniumTest</div>
+				</div>
+				<div class="col leftarrowsmall">
+					<div class="testing">Report</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">How to test the WARP drive?</h1>
+			<h2 class="normal">RTest report</h2>
+		<div id="zoom1" class="zoombutton">Zoom</div>
+			<div class="wrap">
+			
+			<iframe id="iframe1" src="./images/bioWARP.MC_1.0.0.0_086-089.html" style="    width: 100%;
+    height: 15em;
+    max-width: 100%;"></iframe></div>
+			
+		</section>
+		<section>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">How to test the WARP drive?</h1>
+			<h2 class="normal">RSeleniumTest report</h2>
+		<div  id="zoom2" class="zoombutton">Zoom</div><div class="wrap">
+			<iframe  id="iframe2"  src="./images/2018-06-21_microTest.html" style="    width: 100%;
+    height: 15em;
+    max-width: 100%;"></iframe></div>
+		</section>
+		<section data-background-image="./images/art-artist-background-316466.jpg"
+			data-background-position="0em -5.9em"
+			data-background-blend-mode="lighten">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">Structure</h1>
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<ul class="structure">
+				<li class="">The Roche Diagnostics Galaxy</li>
+				<!-- 				<li class="">Where to WARP?<br /> -->
+				<!-- 				<span>Modules in bioWARP</span></li> -->
+
+				<li class="">Demo<br /> <span>Method comparison PDF
+						report generation</span></li>
+				<li class="">How to build the WARP drive?<br /> <span>User
+						requirements and structure</span></li>
+				<li class="">How to test the WARP drive?<br /> <span>Some
+						remarks on validation</span></li>
+				<li class="active">Summary</li>
+			</ul>
+		</section>
+		<section data-transition="slide-in fade-out" data-background-image="./images/art-artist-background-316466.jpg"
+			data-background-position="0em -5.9em"
+			data-background-blend-mode="lighten">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">Summary</h1>
+			<div class="summary left">
+				<div>
+					<b>Interactivity</b> by shiny
+				</div>
+				<div>
+					<b>Modularity</b> by XML + packaging + S4 programming
+				</div>
+				<div>
+					<b>Validation</b> by RTest + RSelenium
+				</div>
+				<div>
+					<b>Standardization</b> by Modularity
+				</div>
+				<div>
+					<b>PDF generation</b> by knitr + Latex
+				</div>
+				<div>
+					<b>Rapid Rollouts</b> by Modularity
+				</div>
+			</div>
+			
+			</section>
+			<section data-transition="slide-in fade-out" data-background-image="./images/art-artist-background-316466.jpg"
+			data-background-position="0em -5.9em"
+			data-background-blend-mode="lighten">
+			<div class="topspacer"></div>
+			<!--  spacer -->
+			<h1 class="normal">Summary</h1>
+			<div class="summary left">
+			<div class="info"><b>Follow up session</b><p>Tomorrow 8am (http://rinpharma.com/mixer)</p>
+				</div>
+				<div class="info"><b>Contributers</b>
+				<p>Sebastian Wolf (sebastian.wolf.sw1@roche.com), Matthias Pfeifer (matthias.pfeifer@roche.com),</p>
+				<p>Andre Schuetzenmeister (andre.schuetzenmeister@roche.com)</p>
+				</div>
+				<div  class="info"><b>Public packages by Roche Diagnostics</b>
+				<p>
+					<a href="https://cran.r-project.org/web/packages/RTest/index.html">RTest</a>
+				,
+					<a href="https://cran.r-project.org/web/packages/VCA/index.html">VCA</a>
+				,
+					<a href="https://cran.r-project.org/web/packages/mcr/index.html">mcr</a>
+				</p>
+				
+				</div>
+				<div class="info"><b>Main project packages</b>
+				<p>
+					<a href="https://cran.r-project.org/web/packages/shiny/index.html">shiny
+						(RStudio)</a>
+				,
+					<a href="https://cran.r-project.org/web/packages/XML/index.html">XML
+						(Duncan Temple)</a>
+				,
+					<a href="https://cran.r-project.org/web/packages/knitr/index.html">knitr
+						(RStudio)</a>
+				</p>
+				<p>
+					<a
+						href="https://cran.r-project.org/web/packages/RSelenium/index.html">RSelenium
+						(John Harrison)</a>
+				</p>
+				</div></div>
+		</section>
+		<section data-transition="fade-in fade-out">
+		<br/>
+			<div class="finishwrapper">
+				<div class="finish">Doing now what patients need next</div>
+			</div>
+		</section>
+	</div>
+</div>
+<script>
+	//---------------------------------------------------------------------------
+	
+	// Reveal into Body
+	
+	// ---------------------------------------------------------------------------
+
+	//if($("body>#reveal").length == 0){
+	//	$('#reveal').appendTo("body");
+	//}
+	
+	//---------------------------------------------------------------------------
+	
+	// Initialize Reveal.js
+	
+	// ---------------------------------------------------------------------------
+	
+	Reveal.initialize({
+		slideNumber: true,
+		width: "100%",
+		height: "100%",
+		margin: 0,
+		minScale: 1,
+		maxScale: 1,
+		center: false,
+		controls: false
+	});	
+	// ---------------------------------------------------------------------------
+
+	// Observer for UFO start
+	
+	// ---------------------------------------------------------------------------
+	
+	// Select the node that will be observed for mutations
+	var targetNode = document.getElementById('rocket1');
+
+	// Options for the observer (which mutations to observe)
+	var config = { attributes: true, childList: false, subtree: false };
+
+	// Callback function to execute when mutations are observed
+	var callback = function(mutationsList) {
+	    for(var mutation of mutationsList) {
+	        if (mutation.type == 'attributes') {
+	            if($(mutation.target).hasClass("visible")){
+	            	$("#rocket1").addClass("animate");
+	            	break
+	            }else{
+	            	$("#rocket1").removeClass("animate");
+	            	break
+	            }
+	        }
+	    }
+	};
+
+	// Create an observer instance linked to the callback function
+	var observer = new MutationObserver(callback);
+
+	// Start observing the target node for configured mutations
+	observer.observe(targetNode, config);
+	
+	// Select the node that will be observed for mutations
+	var targetNode2 = document.getElementById('rocket2');
+
+	// Callback function to execute when mutations are observed
+	var callback2 = function(mutationsList) {
+	    for(var mutation of mutationsList) {
+	        if (mutation.type == 'attributes') {
+	            if($(mutation.target).hasClass("visible")){
+	            	$("#rocket2").addClass("animate");
+	            	break
+	            }else{
+	            	$("#rocket2").removeClass("animate");
+	            	break
+	            }
+	        }
+	    }
+	};
+
+	// Create an observer instance linked to the callback function
+	var observer = new MutationObserver(callback2);
+
+	// Start observing the target node for configured mutations
+	observer.observe(targetNode2, config);
+	
+	// ---------------------------------------------------------------------------
+	
+	// Mouse Navigation
+	
+	// ---------------------------------------------------------------------------
+	
+// 	window.addEventListener("mousedown", handleClick, false);
+// 	window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+	
+// 	function handleClick(e) {
+// 		e.preventDefault();
+// 		if(e.button === 0) Reveal.next(); 
+// 	}
+	
+	// ---------------------------------------------------------------------------
+	
+	// Move reaveal out of "main content" + change its size
+
+	// ---------------------------------------------------------------------------
+	$(".container-fluid>#reveal").remove();
+	$("#reveal").css("height", $(window).height());
+	$(".grad").css("height", $(window).height());
+	$("#modhead").css("visibility", "hidden");
+	$("#modhead").css("height", "0px");
+	$("#modhead").css("margin", "0px");
+	$(".app-main-content").css("height", "0px");
+	$(".app-main-content").css("margin", "0px");
+	
+	// ---------------------------------------------------------------------------
+	
+	// Roche Logo
+	
+	// ---------------------------------------------------------------------------
+	
+	// ---------------------------------------------------------------------------
+	
+	// Iframe zoom
+	
+	// ---------------------------------------------------------------------------
+	
+	$("#zoom1").click(function(e){
+		$("#iframe1").toggleClass("zoom");
+	})
+	$("#zoom2").click(function(e){
+		$("#iframe2").toggleClass("zoom");
+	})
+	
+</script>
+</body>
