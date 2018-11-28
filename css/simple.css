@@ -1183,3 +1183,19 @@ FINISH
 	width: 100%;
     overflow: scroll;
 }
+
+/* Task force
+########################################
+
+*/
+
+img.taskforce{
+	filter: brightness(163) grayscale(17.1) contrast(5);
+    width: 6em;
+    margin-left: 1.705em !important; 
+    float: left;
+}
+
+div.taskforce{
+	float: left;color: white;position: relative;line-height: 2.3em;
+}
