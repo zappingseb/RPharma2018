@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RSeleniumTest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="./RSeleniumTest.xsd">
+  <ID>TC02 bioWARP specific tests</ID>
+  <synopsis>
+    <version />
+    <author>Sebastian Wolf</author>
+    <description>Test the Field Drag and drop functionality
+    </description>
+    <change-history>
+      <change author="SW" date="2017-04-24" />
+    </change-history>
+  </synopsis>
+  <input-data>
+    <variable name="vector" value="5"></variable>
+  </input-data>
+  <tests>
+    <UITest test-desc="go to bioWARP Page">
+      <initialize>
+        <url>http://18.185.220.44:8001/</url>
+        <driver_location>C:/Programme_2/RSelenium/selenium-server-standalone-3.141.59.jar
+        </driver_location>
+        <ie_driver_folder>C:/Programme_2/RSelenium</ie_driver_folder>
+        <browser>chrome</browser>
+        <testspec>
+          <execution execution-type="silent" />
+          <return-value>
+            <element name="xx" tolerance="1E-7" />
+          </return-value>
+        </testspec>
+      </initialize>
+    </UITest>
+    <UITest>
+      <wait>
+        <time_in_ms>1000</time_in_ms>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Go to Method Comparison">
+      <click_element>
+        <params>
+          <element type="css selector" value="#mainmenu-navbar a" />
+          <find>0</find>
+          <iframe>0</iframe>
+          <text>Method Comparison</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="Check Title">
+      <get_text>
+        <params>
+          <element type="class name" value="mod-title" />
+          <iframe>0</iframe>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+          <return-value diff-type="absolute" />
+          <reference>
+            <element>M</element>
+            <element>ethod</element>
+            <element>C</element>
+            <element>omparison</element>
+          </reference>
+        </testspec>
+      </get_text>
+    </UITest>
+
+
+    <UITest test-desc="Click on upload dataset">
+      <click_element spec-id="FUN01">
+        <params>
+          <element type="class name" value="btn" />
+          <find>1</find>
+          <iframe>0</iframe>
+          <text>Upload new Dataset</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest>
+      <click_element spec-id="FUN01">
+        <params>
+          <element type="tag" value="a" />
+          <find>1</find>
+          <iframe>0</iframe>
+          <text>Upload File</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+      <wait>
+        <time_in_ms>200</time_in_ms>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Select a file to upload">
+      <enter_text spec-id="FUN01">
+        <params>
+          <element type="id" value="MC_in_fileFile" />
+          <iframe>0</iframe>
+          <value>./MC-004.difference.tables.xlsx</value>
+          <visibility>0</visibility>
+        </params>
+        <testspec>
+          <execution execution-type="error" />
+        </testspec>
+      </enter_text>
+    </UITest>
+    <UITest test-desc="Wait for dataset to be loaded">
+      <wait>
+        <time_in_ms>1500</time_in_ms>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Add the dataset by clicking on the button">
+      <click_element spec-id="FUN01, DAT101">
+        <params>
+          <element type="class name" value="btn" />
+          <iframe>0</iframe>
+          <text>Add Dataset</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+      <wait>
+        <time_in_ms>1000</time_in_ms>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Select tests">
+      <select_option>
+        <params>
+          <element type="class name" value="form-group" />
+          <nr_of_option>1</nr_of_option>
+          <text>Reference Method</text>
+          <find>1</find>
+          <iframe>0</iframe>
+          <which>1</which>
+        </params>
+        <testspec>
+          <execution execution-type="output" />
+          <return-value compare-type="equal" />
+          <reference>
+            <element>REF (numeric)</element>
+          </reference>
+        </testspec>
+      </select_option>
+      <select_option>
+        <params>
+          <element type="class name" value="form-group" />
+          <nr_of_option>1</nr_of_option>
+          <text>Compare Method</text>
+          <find>1</find>
+          <iframe>0</iframe>
+          <which>1</which>
+        </params>
+        <testspec>
+          <execution execution-type="output" />
+          <return-value compare-type="equal" />
+          <reference>
+            <element>TEST (numeric)</element>
+          </reference>
+        </testspec>
+      </select_option>
+      <select_option>
+        <params>
+          <element type="class name" value="form-group" />
+          <nr_of_option>1</nr_of_option>
+          <text>Compare Method</text>
+          <find>1</find>
+          <iframe>0</iframe>
+          <which>1</which>
+        </params>
+        <testspec>
+          <execution execution-type="output" />
+          <return-value compare-type="equal" />
+          <reference>
+            <element>TEST2 (numeric)</element>
+          </reference>
+        </testspec>
+      </select_option>
+    </UITest>
+    <UITest test-desc="Select Grouping">
+      <select_option>
+        <params>
+          <element type="class name" value="form-group" />
+          <nr_of_option>3</nr_of_option>
+          <text>1st Grouping</text>
+          <find>1</find>
+          <iframe>0</iframe>
+          <which>1</which>
+        </params>
+        <testspec>
+          <execution execution-type="output" />
+          <return-value compare-type="equal" />
+          <reference>
+            <element>GROUP1 (character)</element>
+          </reference>
+        </testspec>
+      </select_option>
+      <select_option>
+        <params>
+          <element type="class name" value="form-group" />
+          <nr_of_option>3</nr_of_option>
+          <text>Grouping Mode</text>
+          <find>1</find>
+          <iframe>0</iframe>
+          <which>1</which>
+        </params>
+        <testspec>
+          <execution execution-type="output" />
+          <return-value compare-type="equal" />
+          <reference>
+            <element>use single groups only</element>
+          </reference>
+        </testspec>
+      </select_option>
+    </UITest>
+    <UITest test-desc="Switch on Linear Regression">
+      <change_switch>
+        <params>
+          <element type="id" value="MC_input_in_mc_linreg" />
+          <iframe>0</iframe>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+          <return-value>
+            <element diff-type="absolute" />
+          </return-value>
+          <reference>
+            <element>on</element>
+          </reference>
+        </testspec>
+      </change_switch>
+    </UITest>
+    <UITest><wait>
+        <time_in_ms>2000</time_in_ms>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Move slider end to 4.0 digits">
+      <move_slider>
+        <params>
+          <element type="id" value="MC_input_in_roundDigits" />
+          <iframe>0</iframe>
+          <units_to_move unit_type="steps">1</units_to_move>
+          <from_to>single</from_to>
+          <max_value>5</max_value>
+          <min_value>1</min_value>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+          <return-value diff-type="relative" />
+          <reference>
+            <element name="vector">4</element>
+          </reference>
+        </testspec>
+      </move_slider>
+    </UITest>
+    <UITest test-desc="Move slider end to 5.0 digits">
+      <move_slider>
+        <params>
+          <element type="id" value="MC_input_in_roundDigits" />
+          <iframe>0</iframe>
+          <units_to_move unit_type="steps">1</units_to_move>
+          <from_to>single</from_to>
+          <max_value>5</max_value>
+          <min_value>1</min_value>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+          <return-value diff-type="relative" />
+          <reference>
+            <element name="vector">5</element>
+          </reference>
+        </testspec>
+      </move_slider>
+    </UITest>
+    <UITest test-desc="Move slider end to 4.0 digits">
+      <move_slider>
+        <params>
+          <element type="id" value="MC_input_in_roundDigits" />
+          <iframe>0</iframe>
+          <units_to_move unit_type="steps">-1</units_to_move>
+          <from_to>single</from_to>
+          <max_value>5</max_value>
+          <min_value>1</min_value>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+          <return-value diff-type="relative" />
+          <reference>
+            <element name="vector">4</element>
+          </reference>
+        </testspec>
+      </move_slider>
+    </UITest>
+    <UITest test-desc="Run Analysis">
+      <click_element>
+        <params>
+          <element type="class name" value="btn" />
+          <find>1</find>
+          <iframe>0</iframe>
+          <text>RUN ANALYSIS</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="Wait for the analysis to go through">
+      <wait>
+        <time_in_ms>15000</time_in_ms>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest>
+      <get_table>
+        <params>
+          <element type="css selector" value="#dataTableOut_tab_summary table" />
+          <iframe>0</iframe>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+          <return-value compare-type="equal" diff-type="absolute" />
+          <reference>
+            <col-defs>
+              <coldef name="Group" type="character" />
+              <coldef name="MC No." type="character" />
+              <coldef name="Ref. Method (X)" type="character" />
+              <coldef name="Test Method (Y)" type="character" />
+              <coldef name="No. Paris (total)" type="character" />
+              <coldef name="No. Missings (excl.)" type="character" />
+              <coldef name="No. Used" type="character" />
+              <coldef name="Regr. Method" type="character" />
+              <coldef name="Intercept" type="character" />
+              <coldef name="Slope" type="character" />
+            </col-defs>
+            <row name="1">
+              <cell>SMOKER</cell>
+              <cell>1</cell>
+              <cell>REF</cell>
+              <cell>TEST</cell>
+              <cell>32</cell>
+              <cell>0</cell>
+              <cell>32</cell>
+              <cell>LinReg</cell>
+              <cell>0.1763</cell>
+              <cell>1.0671</cell>
+            </row>
+            <row name="2">
+              <cell></cell>
+              <cell>2</cell>
+              <cell>REF</cell>
+              <cell>TEST</cell>
+              <cell>32</cell>
+              <cell>0</cell>
+              <cell>32</cell>
+              <cell>PaBa</cell>
+              <cell>0.0538</cell>
+              <cell>1.0011  </cell>
+            </row>
+            <row name="3">
+              <cell></cell>
+              <cell>3</cell>
+              <cell>REF</cell>
+              <cell>TEST2</cell>
+              <cell>32</cell>
+              <cell>0</cell>
+              <cell>32</cell>
+              <cell>LinReg</cell>
+              <cell>0.3222</cell>
+              <cell>0.9691</cell>
+            </row>
+            <row name="4">
+              <cell></cell>
+              <cell>4</cell>
+              <cell>REF</cell>
+              <cell>TEST2</cell>
+              <cell>32</cell>
+              <cell>0</cell>
+              <cell>32</cell>
+              <cell>PaBa</cell>
+              <cell>0.0264</cell>
+              <cell>1.004</cell>
+            </row>
+            <row name="5">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row name="6">
+              <cell>NONSMOKER</cell>
+              <cell>1</cell>
+              <cell>REF</cell>
+              <cell>TEST</cell>
+              <cell>32</cell>
+              <cell>0</cell>
+              <cell>32</cell>
+              <cell>LinReg</cell>
+              <cell>0.0408</cell>
+              <cell>1.0019</cell>
+            </row>
+            <row name="7">
+              <cell></cell>
+              <cell>2</cell>
+              <cell>REF</cell>
+              <cell>TEST</cell>
+              <cell>32</cell>
+              <cell>0</cell>
+              <cell>32</cell>
+              <cell>PaBa</cell>
+              <cell>0.0422</cell>
+              <cell>1.0025</cell>
+            </row>
+            <row name="8">
+              <cell></cell>
+              <cell>3</cell>
+              <cell>REF</cell>
+              <cell>TEST2</cell>
+              <cell>32</cell>
+              <cell>0</cell>
+              <cell>32</cell>
+              <cell>LinReg</cell>
+              <cell>0.197</cell>
+              <cell>0.9818</cell>
+            </row>
+            <row name="9">
+              <cell></cell>
+              <cell>4</cell>
+              <cell>REF</cell>
+              <cell>TEST2</cell>
+              <cell>32</cell>
+              <cell>0</cell>
+              <cell>32</cell>
+              <cell>PaBa</cell>
+              <cell>0.026</cell>
+              <cell>1.0044</cell>
+            </row>
+            <row name="10">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </reference>
+        </testspec>
+      </get_table>
+    </UITest>
+    <UITest test-desc="Go to Regression Summary">
+      <click_element>
+        <params>
+          <element type="css selector" value=".bioWARP_sideMenu a"></element>
+          <find>0</find>
+          <iframe>0</iframe>
+          <text>Regression Summary</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent"></execution>
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="wait for PlotView">
+      <wait>
+        <time_in_ms>6500</time_in_ms>
+        <testspec>
+          <execution></execution>
+        </testspec>
+      </wait>
+    </UITest>
+      <UITest test-desc="Switch on Spearman Coefficient">
+      <check_box>
+        <params>
+          <name>MC_fig_scatter.in_show.cor</name>
+          <label>Spearman</label>
+          <iframe>0</iframe>
+        </params>
+        <testspec>
+          <execution execution-type="silent"/>
+          <return-value>
+            <element name="test" diff-type="absolute" />
+          </return-value>
+          <reference>
+            <element name="test">TRUE</element>
+          </reference>
+        </testspec>
+      </check_box>
+    </UITest>
+    <UITest test-desc="Click ok to really switch it on">
+      <click_element>
+        <params>
+          <element type="css selector" value=".bioWARP_result_control .btn"/>
+          <iframe>0</iframe>
+          <text>OK</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent"/>
+        </testspec>
+      </click_element>
+      <wait>
+        <time_in_ms>1000</time_in_ms>
+        <testspec>
+          <execution/>
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="wait for PlotView">
+      <wait>
+        <time_in_ms>5500</time_in_ms>
+        <testspec>
+          <execution></execution>
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Go to Download Results">
+      <click_element>
+        <params>
+          <element type="css selector" value=".bioWARP_sideMenu a"></element>
+          <find>0</find>
+          <iframe>0</iframe>
+          <text>Download Results</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent"></execution>
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="Click on Report Preview">
+      <click_element>
+        <params>
+          <element type="css selector" value=".action-button" />
+          <find>1</find>
+          <iframe>0</iframe>
+          <text>Online Preview of PDF Report</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="Wait for Preview to be created">
+      <wait>
+        <time_in_ms>7500</time_in_ms>
+        <testspec>
+          <execution />
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Check first preview page">
+      <get_image>
+        <params>
+          <element type="css selector" value=".tab-pane .active .bioWARP_previewPanel" />
+        </params>
+        <testspec>
+          <execution execution-type="message" />
+          <return-value diff-type="absolute" tolerance="0.05" />
+          <reference>
+            <element>./FrontPage.png</element>
+          </reference>
+        </testspec>
+      </get_image>
+    </UITest>
+    <UITest test-desc="Check first preview page WRONG">
+      <get_image>
+        <params>
+          <element type="css selector" value=".tab-pane .active .bioWARP_previewPanel" />
+        </params>
+        <testspec>
+          <execution execution-type="message" />
+          <return-value diff-type="absolute" tolerance="0.05" />
+          <reference>
+            <element>./FrontPage_WRONG.png</element>
+          </reference>
+        </testspec>
+      </get_image>
+    </UITest>
+    <UITest test-desc="Go to Page 11">
+      <click_element>
+        <params>
+          <element type="css selector" value=".nav-tabs>li>a" />
+          <find>0</find>
+          <iframe>0</iframe>
+          <text>11</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="Go to Page 12">
+      <click_element>
+        <params>
+          <element type="css selector" value=".nav-tabs>li>a" />
+          <find>0</find>
+          <iframe>0</iframe>
+          <text>12</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="Wait for Preview to be created">
+      <wait>
+        <time_in_ms>7500</time_in_ms>
+        <testspec>
+          <execution />
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Cancel Analysis">
+      <click_element>
+        <params>
+          <element type="class name" value="btn" />
+          <find>1</find>
+          <iframe>0</iframe>
+          <text>Cancel Current Analysis</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="Cancel Analysis Yes">
+      <click_element>
+        <params>
+          <element type="class name" value="btn" />
+          <find>1</find>
+          <iframe>0</iframe>
+          <text>Yes</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="wait for cancellation">
+      <wait>
+        <time_in_ms>5500</time_in_ms>
+        <testspec>
+          <execution></execution>
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Load Example for Group Mode">
+      <select_option test-desc="Select Example">
+        <params>
+          <element type="class name" value="form-group" />
+          <nr_of_option>1</nr_of_option>
+          <text>Load Example</text>
+          <find>1</find>
+          <iframe>0</iframe>
+        </params>
+        <testspec>
+          <execution execution-type="output" />
+          <return-value diff-type="absolute" />
+          <reference>
+            <element>Creatine data with limits</element>
+          </reference>
+        </testspec>
+      </select_option>
+      <wait test-desc="Reload Configuration">
+        <time_in_ms>10000</time_in_ms>
+        <testspec>
+          <execution></execution>
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest test-desc="Reset">
+      <click_element>
+        <params>
+          <element type="class name" value="btn" />
+          <find>1</find>
+          <iframe>0</iframe>
+          <text>Reset</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="Say Yes to Reset">
+      <click_element>
+        <params>
+          <element type="class name" value="btn" />
+          <find>1</find>
+          <iframe>0</iframe>
+          <text>Yes</text>
+        </params>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </click_element>
+    </UITest>
+    <UITest test-desc="Wait for bioWARP to refresh">
+      <wait>
+        <time_in_ms>1500</time_in_ms>
+        <testspec>
+          <execution execution-type="silent" />
+        </testspec>
+      </wait>
+    </UITest>
+     <UITest test-desc="wait for PlotView">
+      <wait>
+        <time_in_ms>5500</time_in_ms>
+        <testspec>
+          <execution></execution>
+        </testspec>
+      </wait>
+    </UITest>
+    <UITest>
+      <close>
+        <testspec />
+      </close>
+    </UITest>
+  </tests>
+</RSeleniumTest>
