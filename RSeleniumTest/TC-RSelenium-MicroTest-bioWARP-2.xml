@@ -17,7 +17,7 @@
   <tests>
     <UITest test-desc="go to bioWARP Page">
       <initialize>
-        <url>http://18.185.220.44:8001/</url>
+        <url>http://3.122.100.224:3801/</url>
         <driver_location>C:/Programme_2/RSelenium/selenium-server-standalone-3.141.59.jar
         </driver_location>
         <ie_driver_folder>C:/Programme_2/RSelenium</ie_driver_folder>
@@ -32,7 +32,7 @@
     </UITest>
     <UITest>
       <wait>
-        <time_in_ms>1000</time_in_ms>
+        <time_in_ms>5000</time_in_ms>
         <testspec>
           <execution execution-type="silent" />
         </testspec>
@@ -69,8 +69,6 @@
         </testspec>
       </get_text>
     </UITest>
-
-
     <UITest test-desc="Click on upload dataset">
       <click_element spec-id="FUN01">
         <params>

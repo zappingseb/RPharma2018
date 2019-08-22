@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MC>
+
+  <bioWARP-session>
+    <toolname>bioWARP</toolname>
+    <bioWARP-service>DXREB-IntraApps</bioWARP-service>
+    <bioWARP-version>1.2.4.7-SR08</bioWARP-version>
+    <module>Method Comparison</module>
+    <session-hash>fc966e4588b71fb3e774e25bc31bdafb_MC-91</session-hash>
+    <creation-date>2019-07-15 12:11:30</creation-date>
+  </bioWARP-session>
+
+  <parameters>
+    <control>
+      <in_dataset type="input_dataset-select" reference="yes" datatype="character" value="dataset1"/>
+      <in_sample.name type="input_dataset-field-select" datatype="character">
+        <element></element>
+      </in_sample.name>
+      <in_meth_ref type="input_dataset-field-select" datatype="character">
+        <element>REF</element>
+      </in_meth_ref>
+      <in_unit_ref type="input_text" datatype="character" value=""/>
+      <in_meth_test type="input_dataset-field-select" datatype="character">
+        <element>TEST</element>
+        <element>TEST2</element>
+      </in_meth_test>
+      <in_unit_test type="input_text" datatype="character" value=""/>
+      <in_by_type type="input_option-select" datatype="character">
+        <element>a</element>
+      </in_by_type>
+      <in_by1 type="input_dataset-field-select" datatype="character">
+        <element>__00__DEFAULT__00__</element>
+      </in_by1>
+      <in_by2 type="input_dataset-field-select" datatype="character">
+        <element>__00__DEFAULT__00__</element>
+      </in_by2>
+      <in_mc_linreg type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <in_mc_wlinreg type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <in_mc_paba type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <in_mc_deming type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <in_mc_wdeming type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <in_mc_deming_errorratio type="input_numeric-text" datatype="character" value="1"/>
+      <in_limits type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <in_limits_plot type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <in_limits_xLL_boundary type="input_option-select" datatype="character">
+        <element>[</element>
+      </in_limits_xLL_boundary>
+      <in_limits_xLL type="input_numeric-text" datatype="character" value=""/>
+      <in_limits_xUL type="input_numeric-text" datatype="character" value=""/>
+      <in_limits_xUL_boundary type="input_option-select" datatype="character">
+        <element>]</element>
+      </in_limits_xUL_boundary>
+      <in_limits_yLL_boundary type="input_option-select" datatype="character">
+        <element>[</element>
+      </in_limits_yLL_boundary>
+      <in_limits_yLL type="input_numeric-text" datatype="character" value=""/>
+      <in_limits_yUL type="input_numeric-text" datatype="character" value=""/>
+      <in_limits_yUL_boundary type="input_option-select" datatype="character">
+        <element>]</element>
+      </in_limits_yUL_boundary>
+      <in_computeMDPs type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <in_MDP1 type="input_numeric-text" datatype="character" value=""/>
+      <in_MDP2 type="input_numeric-text" datatype="character" value=""/>
+      <in_MDP3 type="input_numeric-text" datatype="character" value=""/>
+      <in_MDP4 type="input_numeric-text" datatype="character" value=""/>
+      <in_MDP5 type="input_numeric-text" datatype="character" value=""/>
+      <in_MDP6 type="input_numeric-text" datatype="character" value=""/>
+      <in_serum_index_cond type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <in_serum_index_h type="input_dataset-field-select" datatype="character">
+        <element></element>
+      </in_serum_index_h>
+      <in_serum_index_h_comp type="input_option-select" datatype="character">
+        <element>comm</element>
+      </in_serum_index_h_comp>
+      <in_serum_index_h_value type="input_numeric-text" datatype="character" value=""/>
+      <in_serum_index_i type="input_dataset-field-select" datatype="character">
+        <element></element>
+      </in_serum_index_i>
+      <in_serum_index_i_comp type="input_option-select" datatype="character">
+        <element>comm</element>
+      </in_serum_index_i_comp>
+      <in_serum_index_i_value type="input_numeric-text" datatype="character" value=""/>
+      <in_serum_index_l type="input_dataset-field-select" datatype="character">
+        <element></element>
+      </in_serum_index_l>
+      <in_serum_index_l_comp type="input_option-select" datatype="character">
+        <element>comm</element>
+      </in_serum_index_l_comp>
+      <in_serum_index_l_value type="input_numeric-text" datatype="character" value=""/>
+      <in_accuracy type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <in_accuracyClaims  type="input_region-spec" datatype="list">
+        <list  name="values" datatype="list">
+          <vector name="section" datatype="NULL">
+            
+          </vector>
+        </list>
+        <variable name="pres" datatype="character" value="le"/>
+        <list  name="units" datatype="list">
+          <vector name="section" datatype="NULL">
+            
+          </vector>
+        </list>
+      </in_accuracyClaims>
+      <in_outlier type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <in_roundType type="input_option-select" datatype="character">
+        <element>RHU</element>
+      </in_roundType>
+      <in_roundDigits type="input_slider" datatype="integer">
+        <element>4</element>
+      </in_roundDigits>
+      <in_alpha type="input_numeric-text" datatype="character" value="0.05"/>
+    </control>
+    <result>
+      <fig_scatter.in_show.points type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatter.in_show.identity type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatter.in_show.formula type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatter.in_show.cor type="input_checkbox-group" datatype="character">
+        <element>Pearson</element>
+      </fig_scatter.in_show.cor>
+      <fig_scatter.in_main type="input_text" datatype="character" value="Regression Fit"/>
+      <fig_scatter_in_xlab type="input_textarea" datatype="character" value="REF"/>
+      <fig_scatter_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatter_in_ylab type="input_textarea" datatype="character" value="TEST"/>
+      <fig_scatter_in_ylab type="input_textarea" datatype="character" value="TEST2"/>
+      <fig_scatter_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatter.in_xlim type="input_slider" datatype="logical">
+        <element>NA</element>
+        <element>NA</element>
+      </fig_scatter.in_xlim>
+      <fig_scatter.in_legend.pos type="input_option-select" datatype="character">
+        <element>topleft</element>
+      </fig_scatter.in_legend.pos>
+      <fig_scatter.in_legend.bty type="input_option-select" datatype="character">
+        <element>n</element>
+      </fig_scatter.in_legend.bty>
+      <fig_scatter_point_size type="input_option-select" datatype="character">
+        <element>s</element>
+      </fig_scatter_point_size>
+      <fig_scatterLinReg.in_show.points type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterLinReg.in_show.identity type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterLinReg.in_show.formula type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterLinReg.in_show.cor type="input_checkbox-group" datatype="character">
+        <element>Pearson</element>
+      </fig_scatterLinReg.in_show.cor>
+      <fig_scatterLinReg.in_main type="input_text" datatype="character" value="Regression Fit"/>
+      <fig_scatterLinReg_in_xlab type="input_textarea" datatype="character" value="REF"/>
+      <fig_scatterLinReg_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterLinReg_in_ylab type="input_textarea" datatype="character" value="TEST"/>
+      <fig_scatterLinReg_in_ylab type="input_textarea" datatype="character" value="TEST2"/>
+      <fig_scatterLinReg_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterLinReg.in_xlim type="input_slider" datatype="logical">
+        <element>NA</element>
+        <element>NA</element>
+      </fig_scatterLinReg.in_xlim>
+      <fig_scatterLinReg.in_legend.pos type="input_option-select" datatype="character">
+        <element>topleft</element>
+      </fig_scatterLinReg.in_legend.pos>
+      <fig_scatterLinReg.in_legend.bty type="input_option-select" datatype="character">
+        <element>n</element>
+      </fig_scatterLinReg.in_legend.bty>
+      <fig_scatterLinReg_point_size type="input_option-select" datatype="character">
+        <element>s</element>
+      </fig_scatterLinReg_point_size>
+      <fig_scatterWLinReg.in_show.points type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterWLinReg.in_show.identity type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterWLinReg.in_show.formula type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterWLinReg.in_show.cor type="input_checkbox-group" datatype="character">
+        <element>Pearson</element>
+      </fig_scatterWLinReg.in_show.cor>
+      <fig_scatterWLinReg.in_main type="input_text" datatype="character" value="Regression Fit"/>
+      <fig_scatterWLinReg_in_xlab type="input_textarea" datatype="character" value="REF"/>
+      <fig_scatterWLinReg_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterWLinReg_in_ylab type="input_textarea" datatype="character" value="TEST"/>
+      <fig_scatterWLinReg_in_ylab type="input_textarea" datatype="character" value="TEST2"/>
+      <fig_scatterWLinReg_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterWLinReg.in_xlim type="input_slider" datatype="logical">
+        <element>NA</element>
+        <element>NA</element>
+      </fig_scatterWLinReg.in_xlim>
+      <fig_scatterWLinReg.in_legend.pos type="input_option-select" datatype="character">
+        <element>topleft</element>
+      </fig_scatterWLinReg.in_legend.pos>
+      <fig_scatterWLinReg.in_legend.bty type="input_option-select" datatype="character">
+        <element>n</element>
+      </fig_scatterWLinReg.in_legend.bty>
+      <fig_scatterWLinReg_point_size type="input_option-select" datatype="character">
+        <element>s</element>
+      </fig_scatterWLinReg_point_size>
+      <fig_scatterPaBa.in_show.points type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterPaBa.in_show.identity type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterPaBa.in_show.formula type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterPaBa.in_show.cor type="input_checkbox-group" datatype="character">
+        <element>Pearson</element>
+      </fig_scatterPaBa.in_show.cor>
+      <fig_scatterPaBa.in_main type="input_text" datatype="character" value="Regression Fit"/>
+      <fig_scatterPaBa_in_xlab type="input_textarea" datatype="character" value="REF"/>
+      <fig_scatterPaBa_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterPaBa_in_ylab type="input_textarea" datatype="character" value="TEST"/>
+      <fig_scatterPaBa_in_ylab type="input_textarea" datatype="character" value="TEST2"/>
+      <fig_scatterPaBa_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterPaBa.in_xlim type="input_slider" datatype="logical">
+        <element>NA</element>
+        <element>NA</element>
+      </fig_scatterPaBa.in_xlim>
+      <fig_scatterPaBa.in_legend.pos type="input_option-select" datatype="character">
+        <element>topleft</element>
+      </fig_scatterPaBa.in_legend.pos>
+      <fig_scatterPaBa.in_legend.bty type="input_option-select" datatype="character">
+        <element>n</element>
+      </fig_scatterPaBa.in_legend.bty>
+      <fig_scatterPaBa_point_size type="input_option-select" datatype="character">
+        <element>s</element>
+      </fig_scatterPaBa_point_size>
+      <fig_scatterDeming.in_show.points type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterDeming.in_show.identity type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterDeming.in_show.formula type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterDeming.in_show.cor type="input_checkbox-group" datatype="character">
+        <element>Pearson</element>
+      </fig_scatterDeming.in_show.cor>
+      <fig_scatterDeming.in_main type="input_text" datatype="character" value="Regression Fit"/>
+      <fig_scatterDeming_in_xlab type="input_textarea" datatype="character" value="REF"/>
+      <fig_scatterDeming_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterDeming_in_ylab type="input_textarea" datatype="character" value="TEST"/>
+      <fig_scatterDeming_in_ylab type="input_textarea" datatype="character" value="TEST2"/>
+      <fig_scatterDeming_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterDeming.in_xlim type="input_slider" datatype="logical">
+        <element>NA</element>
+        <element>NA</element>
+      </fig_scatterDeming.in_xlim>
+      <fig_scatterDeming.in_legend.pos type="input_option-select" datatype="character">
+        <element>topleft</element>
+      </fig_scatterDeming.in_legend.pos>
+      <fig_scatterDeming.in_legend.bty type="input_option-select" datatype="character">
+        <element>n</element>
+      </fig_scatterDeming.in_legend.bty>
+      <fig_scatterDeming_point_size type="input_option-select" datatype="character">
+        <element>s</element>
+      </fig_scatterDeming_point_size>
+      <fig_scatterWDeming.in_show.points type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterWDeming.in_show.identity type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterWDeming.in_show.formula type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_scatterWDeming.in_show.cor type="input_checkbox-group" datatype="character">
+        <element>Pearson</element>
+      </fig_scatterWDeming.in_show.cor>
+      <fig_scatterWDeming.in_main type="input_text" datatype="character" value="Regression Fit"/>
+      <fig_scatterWDeming_in_xlab type="input_textarea" datatype="character" value="REF"/>
+      <fig_scatterWDeming_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterWDeming_in_ylab type="input_textarea" datatype="character" value="TEST"/>
+      <fig_scatterWDeming_in_ylab type="input_textarea" datatype="character" value="TEST2"/>
+      <fig_scatterWDeming_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_scatterWDeming.in_xlim type="input_slider" datatype="logical">
+        <element>NA</element>
+        <element>NA</element>
+      </fig_scatterWDeming.in_xlim>
+      <fig_scatterWDeming.in_legend.pos type="input_option-select" datatype="character">
+        <element>topleft</element>
+      </fig_scatterWDeming.in_legend.pos>
+      <fig_scatterWDeming.in_legend.bty type="input_option-select" datatype="character">
+        <element>n</element>
+      </fig_scatterWDeming.in_legend.bty>
+      <fig_scatterWDeming_point_size type="input_option-select" datatype="character">
+        <element>s</element>
+      </fig_scatterWDeming_point_size>
+      <tab_outlier.in_show type="input_option-select" datatype="character">
+        <element>complete</element>
+      </tab_outlier.in_show>
+      <fig_absBlandAltman.in_show.bias type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_absBlandAltman.in_show.loa type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_absBlandAltman.in_ysym type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_absBlandAltman.in_main type="input_text" datatype="character" value="Absolute Differences"/>
+      <fig_absBlandAltman_in_xlab type="input_text" datatype="character" value="Reference Method"/>
+      <fig_absBlandAltman_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_absBlandAltman_in_ylab type="input_text" datatype="character" value="Absolute Differences"/>
+      <fig_absBlandAltman_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_relBlandAltman.in_show.bias type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_relBlandAltman.in_ysym type="input_onoffswitch" datatype="logical" value="TRUE"/>
+      <fig_relBlandAltman.in_main type="input_text" datatype="character" value="Relative Difference"/>
+      <fig_relBlandAltman_in_xlab type="input_text" datatype="character" value="Reference Method"/>
+      <fig_relBlandAltman_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_relBlandAltman_in_ylab type="input_text" datatype="character" value="Relative Differences"/>
+      <fig_relBlandAltman_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_MDPAbsBias.in_show.extra type="input_option-select" datatype="character">
+        <element>TRUE</element>
+      </fig_MDPAbsBias.in_show.extra>
+      <fig_MDPAbsBias.in_main type="input_text" datatype="character" value="Bias at MDPs"/>
+      <fig_MDPAbsBias_in_xlab type="input_text" datatype="character" value="Reference Method"/>
+      <fig_MDPAbsBias_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_MDPAbsBias_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_MDPAbsBias.in_legend.pos type="input_option-select" datatype="character">
+        <element>topleft</element>
+      </fig_MDPAbsBias.in_legend.pos>
+      <fig_MDPAbsBias.in_legend.bty type="input_option-select" datatype="character">
+        <element>n</element>
+      </fig_MDPAbsBias.in_legend.bty>
+      <fig_MDPRelBias.in_show.extra type="input_option-select" datatype="character">
+        <element>TRUE</element>
+      </fig_MDPRelBias.in_show.extra>
+      <fig_MDPRelBias.in_main type="input_text" datatype="character" value="Bias at MDPs"/>
+      <fig_MDPRelBias_in_xlab type="input_text" datatype="character" value="Reference Method"/>
+      <fig_MDPRelBias_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_MDPRelBias_in_ylab.unit type="input_text" datatype="character" value=""/>
+      <fig_MDPRelBias.in_legend.pos type="input_option-select" datatype="character">
+        <element>topleft</element>
+      </fig_MDPRelBias.in_legend.pos>
+      <fig_MDPRelBias.in_legend.bty type="input_option-select" datatype="character">
+        <element>n</element>
+      </fig_MDPRelBias.in_legend.bty>
+      <tab_serum_index.in_show type="input_option-select" datatype="character">
+        <element>complete</element>
+      </tab_serum_index.in_show>
+      <tab_dstat.in_show.optional type="input_onoffswitch" datatype="logical" value="FALSE"/>
+      <fig_hist.in_main type="input_text" datatype="character" value="Histogram of Measurements"/>
+      <fig_hist_in_xlab type="input_text" datatype="character" value="Measurement Value"/>
+      <fig_hist_in_xlab.unit type="input_text" datatype="character" value=""/>
+      <fig_hist_in_legend_pos type="input_option-select" datatype="character">
+        <element>topleft</element>
+      </fig_hist_in_legend_pos>
+      <fig_hist.in_legend.bty type="input_option-select" datatype="character">
+        <element>n</element>
+      </fig_hist.in_legend.bty>
+      <fig_hist_nr_classes type="input_slider" datatype="character">
+        <element></element>
+      </fig_hist_nr_classes>
+    </result>
+  </parameters>
+
+  <datasets>
+    <dataset1>
+      <name>MC-004 - MC-004.raw.data</name>
+      <description></description>
+      <type>user</type>
+      <dataset-source>
+        <name>MC-004.difference.tables.xlsx</name>
+        <type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</type>
+        <size-b>33051</size-b>
+        <creation-time>2019-07-15 12:10:39</creation-time>
+        <md5>1ec38d9c032ac27a97e74d258a9d7c9c</md5>
+      </dataset-source>
+      <bioWARP_TableDataset>
+        <col-defs>
+          <coldef name="ID" type="character" />
+          <coldef name="REF" type="numeric" />
+          <coldef name="TEST" type="numeric" />
+          <coldef name="GROUP1" type="character" />
+          <coldef name="GROUP2" type="character" />
+          <coldef name="TEST2" type="numeric" />
+        </col-defs>
+        <row name="1">
+          <cell>Addictives_1</cell>
+          <cell>1</cell>
+          <cell>1.09740952</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>1.027516495</cell>
+        </row>
+        <row name="2">
+          <cell>Addictives_2</cell>
+          <cell>1.1</cell>
+          <cell>1.137862511</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>1.145003582</cell>
+        </row>
+        <row name="3">
+          <cell>Addictives_3</cell>
+          <cell>1.2</cell>
+          <cell>4</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>1.210947121</cell>
+        </row>
+        <row name="4">
+          <cell>Addictives_4</cell>
+          <cell>1.1</cell>
+          <cell>1.169628414</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>1.107537646</cell>
+        </row>
+        <row name="5">
+          <cell>Addictives_5</cell>
+          <cell>2.3</cell>
+          <cell>2.317335973</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>5.769856095</cell>
+        </row>
+        <row name="6">
+          <cell>Addictives_6</cell>
+          <cell>2.1</cell>
+          <cell>2.145179468</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>2.13761144</cell>
+        </row>
+        <row name="7">
+          <cell>Addictives_7</cell>
+          <cell>2</cell>
+          <cell>2.094472684</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>2.041812534</cell>
+        </row>
+        <row name="8">
+          <cell>Addictives_8</cell>
+          <cell>2.4</cell>
+          <cell>2.40055076</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>2.447495589</cell>
+        </row>
+        <row name="9">
+          <cell>Addictives_9</cell>
+          <cell>2.5</cell>
+          <cell>2.537567656</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>2.533635313</cell>
+        </row>
+        <row name="10">
+          <cell>Addictives_10</cell>
+          <cell>3</cell>
+          <cell>3.068752832</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>3.004746969</cell>
+        </row>
+        <row name="11">
+          <cell>Addictives_11</cell>
+          <cell>3</cell>
+          <cell>3.0734272</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>3.047191626</cell>
+        </row>
+        <row name="12">
+          <cell>Addictives_12</cell>
+          <cell>3.2</cell>
+          <cell>3.245211449</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>3.241918406</cell>
+        </row>
+        <row name="13">
+          <cell>Addictives_13</cell>
+          <cell>4</cell>
+          <cell>5.2</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>4.034812491</cell>
+        </row>
+        <row name="14">
+          <cell>Addictives_14</cell>
+          <cell>4.5</cell>
+          <cell>4.577833197</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>4.514731471</cell>
+        </row>
+        <row name="15">
+          <cell>Addictives_15</cell>
+          <cell>4.7</cell>
+          <cell>5.18</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>4.725759271</cell>
+        </row>
+        <row name="16">
+          <cell>Addictives_16</cell>
+          <cell>4.8</cell>
+          <cell>4.823713645</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>4.841763649</cell>
+        </row>
+        <row name="17">
+          <cell>Addictives_17</cell>
+          <cell>5.328571429</cell>
+          <cell>5.343687916</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>5.444395144</cell>
+        </row>
+        <row name="18">
+          <cell>Addictives_18</cell>
+          <cell>5.689285714</cell>
+          <cell>5.694935448</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>5.761808967</cell>
+        </row>
+        <row name="19">
+          <cell>Addictives_19</cell>
+          <cell>6.05</cell>
+          <cell>6.112706703</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>6.157960249</cell>
+        </row>
+        <row name="20">
+          <cell>Addictives_20</cell>
+          <cell>6.410714286</cell>
+          <cell>6.493807319</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>6.485167512</cell>
+        </row>
+        <row name="21">
+          <cell>Addictives_21</cell>
+          <cell>6.771428571</cell>
+          <cell>6.824829698</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>6.857358655</cell>
+        </row>
+        <row name="22">
+          <cell>Addictives_22</cell>
+          <cell>7.132142857</cell>
+          <cell>7.191254304</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>7.180885623</cell>
+        </row>
+        <row name="23">
+          <cell>Addictives_23</cell>
+          <cell>7.492857143</cell>
+          <cell>11</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>7.546292498</cell>
+        </row>
+        <row name="24">
+          <cell>Addictives_24</cell>
+          <cell>7.853571429</cell>
+          <cell>7.876825903</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>7.895689985</cell>
+        </row>
+        <row name="25">
+          <cell>Addictives_25</cell>
+          <cell>8.214285714</cell>
+          <cell>12.3</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>8.225854181</cell>
+        </row>
+        <row name="26">
+          <cell>Addictives_26</cell>
+          <cell>8.575</cell>
+          <cell>8.668205685</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>8.657432822</cell>
+        </row>
+        <row name="27">
+          <cell>Addictives_27</cell>
+          <cell>8.935714286</cell>
+          <cell>8.955116111</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>9.019656239</cell>
+        </row>
+        <row name="28">
+          <cell>Addictives_28</cell>
+          <cell>9.296428571</cell>
+          <cell>13.12</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>9.354062389</cell>
+        </row>
+        <row name="29">
+          <cell>Addictives_29</cell>
+          <cell>9.657142857</cell>
+          <cell>9.667078464</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>9.740030008</cell>
+        </row>
+        <row name="30">
+          <cell>Addictives_30</cell>
+          <cell>10.01785714</cell>
+          <cell>10.04878709</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>10.04440056</cell>
+        </row>
+        <row name="31">
+          <cell>Addictives_31</cell>
+          <cell>10.37857143</cell>
+          <cell>10.46878205</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>10.4574685</cell>
+        </row>
+        <row name="32">
+          <cell>Addictives_32</cell>
+          <cell>10.73928571</cell>
+          <cell>10.74493773</cell>
+          <cell>SMOKER</cell>
+          <cell>DRINKER</cell>
+          <cell>10.79041863</cell>
+        </row>
+        <row name="33">
+          <cell>Addictives_33</cell>
+          <cell>1</cell>
+          <cell>1.019928069</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>1.016514465</cell>
+        </row>
+        <row name="34">
+          <cell>Addictives_34</cell>
+          <cell>1.1</cell>
+          <cell>1.136212421</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>1.135422544</cell>
+        </row>
+        <row name="35">
+          <cell>Addictives_35</cell>
+          <cell>1.2</cell>
+          <cell>1.249603646</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>1.239004873</cell>
+        </row>
+        <row name="36">
+          <cell>Addictives_36</cell>
+          <cell>1.1</cell>
+          <cell>1.104806436</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>2.838434749</cell>
+        </row>
+        <row name="37">
+          <cell>Addictives_37</cell>
+          <cell>2.3</cell>
+          <cell>2.33096443</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>2.311388549</cell>
+        </row>
+        <row name="38">
+          <cell>Addictives_38</cell>
+          <cell>2.1</cell>
+          <cell>2.147275464</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>2.115744858</cell>
+        </row>
+        <row name="39">
+          <cell>Addictives_39</cell>
+          <cell>2</cell>
+          <cell>2.096387123</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>2.046799652</cell>
+        </row>
+        <row name="40">
+          <cell>Addictives_40</cell>
+          <cell>2.4</cell>
+          <cell>2.405226884</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>2.444096171</cell>
+        </row>
+        <row name="41">
+          <cell>Addictives_41</cell>
+          <cell>2.5</cell>
+          <cell>2.520491617</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>2.501808178</cell>
+        </row>
+        <row name="42">
+          <cell>Addictives_42</cell>
+          <cell>3</cell>
+          <cell>3.050433266</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>3.043529941</cell>
+        </row>
+        <row name="43">
+          <cell>Addictives_43</cell>
+          <cell>3</cell>
+          <cell>3.050059425</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>3.035535045</cell>
+        </row>
+        <row name="44">
+          <cell>Addictives_44</cell>
+          <cell>3.2</cell>
+          <cell>3.296866684</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>3.210021439</cell>
+        </row>
+        <row name="45">
+          <cell>Addictives_45</cell>
+          <cell>4</cell>
+          <cell>4.093580662</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>4.016738846</cell>
+        </row>
+        <row name="46">
+          <cell>Addictives_46</cell>
+          <cell>4.5</cell>
+          <cell>4.512145401</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>4.507560156</cell>
+        </row>
+        <row name="47">
+          <cell>Addictives_47</cell>
+          <cell>4.7</cell>
+          <cell>4.778679932</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>4.728897375</cell>
+        </row>
+        <row name="48">
+          <cell>Addictives_48</cell>
+          <cell>4.8</cell>
+          <cell>4.893103301</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>4.80616982</cell>
+        </row>
+        <row name="49">
+          <cell>Addictives_49</cell>
+          <cell>5.328571429</cell>
+          <cell>5.370452621</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>5.389532697</cell>
+        </row>
+        <row name="50">
+          <cell>Addictives_50</cell>
+          <cell>5.689285714</cell>
+          <cell>5.705546629</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>5.800135938</cell>
+        </row>
+        <row name="51">
+          <cell>Addictives_51</cell>
+          <cell>6.05</cell>
+          <cell>6.119172505</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>6.056876847</cell>
+        </row>
+        <row name="52">
+          <cell>Addictives_52</cell>
+          <cell>6.410714286</cell>
+          <cell>6.483105298</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>6.440718959</cell>
+        </row>
+        <row name="53">
+          <cell>Addictives_53</cell>
+          <cell>6.771428571</cell>
+          <cell>6.853309465</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>6.883496161</cell>
+        </row>
+        <row name="54">
+          <cell>Addictives_54</cell>
+          <cell>7.132142857</cell>
+          <cell>7.198503253</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>7.199781618</cell>
+        </row>
+        <row name="55">
+          <cell>Addictives_55</cell>
+          <cell>7.492857143</cell>
+          <cell>7.517134997</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>7.535691541</cell>
+        </row>
+        <row name="56">
+          <cell>Addictives_56</cell>
+          <cell>7.853571429</cell>
+          <cell>7.916028914</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>7.960583296</cell>
+        </row>
+        <row name="57">
+          <cell>Addictives_57</cell>
+          <cell>8.214285714</cell>
+          <cell>8.242181327</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>8.300246838</cell>
+        </row>
+        <row name="58">
+          <cell>Addictives_58</cell>
+          <cell>8.575</cell>
+          <cell>8.637751909</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>8.605482922</cell>
+        </row>
+        <row name="59">
+          <cell>Addictives_59</cell>
+          <cell>8.935714286</cell>
+          <cell>8.959800979</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>9.004768403</cell>
+        </row>
+        <row name="60">
+          <cell>Addictives_60</cell>
+          <cell>9.296428571</cell>
+          <cell>9.364071415</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>9.407140559</cell>
+        </row>
+        <row name="61">
+          <cell>Addictives_61</cell>
+          <cell>9.657142857</cell>
+          <cell>9.660089581</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>9.692949192</cell>
+        </row>
+        <row name="62">
+          <cell>Addictives_62</cell>
+          <cell>10.01785714</cell>
+          <cell>10.08376506</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>10.11458196</cell>
+        </row>
+        <row name="63">
+          <cell>Addictives_63</cell>
+          <cell>10.37857143</cell>
+          <cell>10.4483849</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>10.38356326</cell>
+        </row>
+        <row name="64">
+          <cell>Addictives_64</cell>
+          <cell>10.73928571</cell>
+          <cell>10.83200167</cell>
+          <cell>NONSMOKER</cell>
+          <cell>NONDRINKER</cell>
+          <cell>10.85613675</cell>
+        </row>
+      </bioWARP_TableDataset>
+    </dataset1>
+  </datasets>
+
+</MC>
